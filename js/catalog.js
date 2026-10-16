@@ -34,6 +34,10 @@
     });
   }
 
+  function num(value) {
+    return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   function clip(text, limit) {
     text = text || "";
     return text.length > limit ? text.slice(0, limit) + "…" : text;
@@ -105,9 +109,9 @@
             esc(outfit) +
             '</p><span class="card-foot"><span class="meta">' +
             esc(shortCollection(mod.collection)) +
-            "</span><span class=\"meta\">" +
+            " · " +
             esc(mod.source || "来源见下载页") +
-            "</span></span></button></li>"
+            '</span><span class="more">查看</span></span></button></li>'
           );
         })
         .join("");
@@ -271,6 +275,11 @@
       fillCollections();
       bindFilters();
       render();
+      var wear = mods.filter(function (mod) { return mod.group === "服装"; }).length;
+      var login = mods.filter(function (mod) { return mod.login; }).length;
+      document.getElementById("stat-total").textContent = num(mods.length);
+      document.getElementById("stat-wear").textContent = num(wear);
+      document.getElementById("stat-login").textContent = num(login);
     })
     .catch(function () {
       status.textContent = "对照表没有载入。请从站点根目录打开页面。";
