@@ -3,18 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>道-域</title>
+    <title>DOAXVV Steam 模组对照</title>
     <meta
       name="description"
-      content="道-域的个人主页。B 站 UP，投稿以死或生沙滩排球 mod 和游戏实况为主。遇到问题可以加群 1065929278。"
+      content="死或生：沙滩排球维纳斯假期 Steam 版公开模组对照。可按套装、体型、作者和来源检索，下载跳到原页面。"
     />
-    <meta property="og:title" content="道-域" />
-    <meta
-      property="og:description"
-      content="遇到问题的加群 1065929278。up 正在沉淀中。"
-    />
-    <meta property="og:type" content="profile" />
-    <meta name="theme-color" content="#e7eef6" />
+    <meta name="theme-color" content="#14312c" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,245 +19,93 @@
     <link rel="stylesheet" href="css/site.css" />
   </head>
   <body>
+    <div id="gate" class="gate" hidden>
+      <div class="gate-card">
+        <p class="eyebrow">18+</p>
+        <h1>DOAXVV 模组对照</h1>
+        <p>
+          《死或生：沙滩排球维纳斯假期》Steam 版的公开模组索引。服装和 CC
+          多数含裸化或透视。这里只做对照和跳转，不托管文件，也不放预览图。
+        </p>
+        <button id="enter" type="button">我已满 18 岁，进入对照表</button>
+      </div>
+    </div>
+
     <header class="top">
-      <a class="brand" href="#top">道-域</a>
-      <nav class="nav" aria-label="页内">
-        <a href="#videos">投稿</a>
-        <a href="#columns">专栏</a>
-        <a href="#live">直播</a>
-        <a href="#about">关于</a>
-      </nav>
-      <a
-        class="space"
-        href="https://space.bilibili.com/56143388"
-        target="_blank"
-        rel="noreferrer me"
-        >B 站空间</a
-      >
+      <a class="brand" href="#catalog">
+        <span class="mark" aria-hidden="true">VV</span>
+        <span>
+          <strong>DOAXVV</strong>
+          <em>Steam 模组对照</em>
+        </span>
+      </a>
+      <form id="search-form" class="search" role="search">
+        <label class="sr" for="q">搜索模组</label>
+        <input id="q" type="search" placeholder="搜套装、文件名、作者、体型" autocomplete="off" />
+      </form>
+      <p id="tally" class="tally">正在读取对照表…</p>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="name">
-        <div class="hero-copy">
-          <p class="status"><span class="status-dot" aria-hidden="true"></span>沉淀中</p>
-          <h1 id="name">道-域</h1>
-          <p class="sign">遇到问题的加群 1065929278。<br />up 正在沉淀中。</p>
-          <p class="hero-links">
-            <a href="https://space.bilibili.com/56143388" target="_blank" rel="noreferrer me"
-              >space.bilibili.com/56143388</a
-            >
-          </p>
-        </div>
-        <figure class="portrait">
-          <img
-            src="images/avatar.jpg"
-            width="1024"
-            height="1024"
-            alt="道-域的头像，短发少女靠着一听汽水，背景是晴天和雪地"
-          />
-        </figure>
-      </section>
+    <div class="layout" id="catalog">
+      <aside class="side">
+        <details class="panel" id="filter-panel" open>
+          <summary>筛选</summary>
+          <fieldset>
+            <legend>类型</legend>
+            <div id="type-filters" class="choices"></div>
+          </fieldset>
+          <fieldset>
+            <legend>体型</legend>
+            <div id="body-filters" class="choices"></div>
+          </fieldset>
+          <fieldset>
+            <legend>标记</legend>
+            <div id="flag-filters" class="choices"></div>
+          </fieldset>
+          <label class="select-label" for="collection">合集</label>
+          <select id="collection">
+            <option value="">全部合集</option>
+          </select>
+        </details>
 
-      <dl class="stats">
-        <div>
-          <dt>粉丝</dt>
-          <dd>7,386</dd>
-        </div>
-        <div>
-          <dt>投稿</dt>
-          <dd>12</dd>
-        </div>
-        <div>
-          <dt>投稿播放</dt>
-          <dd>831,887</dd>
-        </div>
-        <div>
-          <dt>直播</dt>
-          <dd>未开播</dd>
-        </div>
-      </dl>
-      <p class="stats-note">数字取自 B 站公开主页。之后以空间里的实时数据为准。</p>
+        <section class="panel guide">
+          <h2>使用前</h2>
+          <ul>
+            <li>服装模组要先拥有对应的官方套装，才会在游戏里生效。</li>
+            <li>teddy 一系常见热键是 Ctrl+X / Z / C / V 切换部件或透明度，F10 保存。</li>
+            <li>Honoka 体覆盖 Honoka、Luna、Sayuri、Tsukushi、Elise、Shandy。Marie 体覆盖 Marie、Nagisa、Kanna、Lobelia、Shizuku。其余角色默认 Common。</li>
+            <li>LoversLab 的附件要登录才能下。标了 DMM 的文件，不保证 Steam 能用。</li>
+            <li>部分 SSR 作者建议再装 GUICVM。Swimsuit Swapper 需要 3Dfix。</li>
+          </ul>
+        </section>
 
-      <section id="videos" class="block" aria-labelledby="videos-title">
-        <div class="block-head">
-          <p class="kicker">合集</p>
-          <h2 id="videos-title">死或生沙滩排球 mod</h2>
-          <p class="quote">mod 的视频越来越多了，放在一个合集里了。</p>
-        </div>
-        <ol class="videos">
-          <li>
-            <a href="https://www.bilibili.com/video/BV1mP411h7tD" target="_blank" rel="noreferrer">
-              <time datetime="2023-09-02">2023-09-02</time>
-              <span class="v-title">沙滩排球mod6.5</span>
-              <span class="v-meta">5:19 · 129,076</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1qT41117yX" target="_blank" rel="noreferrer">
-              <time datetime="2023-01-18">2023-01-18</time>
-              <span class="v-title">维纳斯沙滩排球mod6.0，enb画质补丁启动方法（显卡不错的看一下）</span>
-              <span class="v-meta">1:21 · 78,318</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1As4y1t7nx" target="_blank" rel="noreferrer">
-              <time datetime="2023-01-18">2023-01-18</time>
-              <span class="v-title">维纳斯沙滩排球mod6.0</span>
-              <span class="v-meta">4:11 · 155,477</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1H94y1Z7AM" target="_blank" rel="noreferrer">
-              <time datetime="2022-04-05">2022-04-05</time>
-              <span class="v-title">维纳斯沙滩排球mod5.0</span>
-              <span class="v-meta">2:27 · 133,736</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1yF411v7pR" target="_blank" rel="noreferrer">
-              <time datetime="2022-01-09">2022-01-09</time>
-              <span class="v-title">维纳斯沙滩排球mod4.0安装教程</span>
-              <span class="v-meta">4:56 · 224,643</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1vL411g7Do" target="_blank" rel="noreferrer">
-              <time datetime="2021-10-29">2021-10-29</time>
-              <span class="v-title">死或生沙滩排球mod3.0</span>
-              <span class="v-meta">2:20 · 82,924</span>
-            </a>
-          </li>
-        </ol>
-        <p class="more">
-          <a
-            href="https://space.bilibili.com/56143388/channel/collectiondetail?sid=334783"
-            target="_blank"
-            rel="noreferrer"
-            >在 B 站打开这个合集</a
-          >
-        </p>
+        <section class="panel sources">
+          <h2>来源</h2>
+          <ul>
+            <li><a href="https://aqxaromods.com/othergame/dead-or-alive-xtreme-venus-vacation/" target="_blank" rel="noreferrer">AqxaroMods</a></li>
+            <li><a href="https://minazuki.xyz/" target="_blank" rel="noreferrer">minazuki.xyz</a></li>
+            <li><a href="https://www.loverslab.com/forum/259-dead-or-alive-xtreme-venus-vacation/" target="_blank" rel="noreferrer">LoversLab 版区</a></li>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2731250704" target="_blank" rel="noreferrer">Steam 入门指南</a></li>
+          </ul>
+        </section>
+      </aside>
 
-        <div class="block-head second">
-          <p class="kicker">其他投稿</p>
-          <h2>实况和问题记录</h2>
-        </div>
-        <ol class="videos">
-          <li>
-            <a href="https://www.bilibili.com/video/BV1qeHLeHEan" target="_blank" rel="noreferrer">
-              <time datetime="2024-08-30">2024-08-30</time>
-              <span class="v-title">没想到药没了竟然过了碧水金睛兽</span>
-              <span class="v-meta">6:45 · 1,724</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1TY4y177d6" target="_blank" rel="noreferrer">
-              <time datetime="2022-07-12">2022-07-12</time>
-              <span class="v-title">神tm搜点，看来电子竞技真不需要视力</span>
-              <span class="v-meta">2:29 · 1,199</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1jr4y1h7GG" target="_blank" rel="noreferrer">
-              <time datetime="2022-02-05">2022-02-05</time>
-              <span class="v-title">消逝的光芒2致命bug，根本没法玩</span>
-              <span class="v-meta">2:31 · 1,550</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1PR4y137vV" target="_blank" rel="noreferrer">
-              <time datetime="2021-12-31">2021-12-31</time>
-              <span class="v-title">【年度报告】道-域的2021时光机</span>
-              <span class="v-meta">0:48 · 168</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV1GT4y1L7kU" target="_blank" rel="noreferrer">
-              <time datetime="2020-08-20">2020-08-20</time>
-              <span class="v-title">地平线零之曙光崩溃一些解决方案</span>
-              <span class="v-meta">1:08 · 22,426</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/video/BV15J411s7E7" target="_blank" rel="noreferrer">
-              <time datetime="2019-12-31">2019-12-31</time>
-              <span class="v-title">萌新up没有学过pr的剪辑，就看一下嘛…（下期剪什么由你们决定）</span>
-              <span class="v-meta">4:41 · 646</span>
-            </a>
-          </li>
-        </ol>
-      </section>
-
-      <section id="columns" class="block" aria-labelledby="columns-title">
-        <div class="block-head">
-          <p class="kicker">专栏</p>
-          <h2 id="columns-title">沙滩排球 DLSS</h2>
-          <p class="lead">
-            两篇专栏都叫《沙滩排球dlss5》。安装包和提取码在原文里，这里只链回 B 站。
-          </p>
-        </div>
-        <ol class="videos">
-          <li>
-            <a href="https://www.bilibili.com/read/cv52818088" target="_blank" rel="noreferrer">
-              <time datetime="2026-09-03">2026-09-03</time>
-              <span class="v-title">沙滩排球dlss5</span>
-              <span class="v-meta">942 阅读</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bilibili.com/read/cv52762311" target="_blank" rel="noreferrer">
-              <time datetime="2026-08-31">2026-08-31</time>
-              <span class="v-title">沙滩排球dlss5 · 尝鲜</span>
-              <span class="v-meta">882 阅读</span>
-            </a>
-          </li>
-        </ol>
-      </section>
-
-      <section id="live" class="block" aria-labelledby="live-title">
-        <div class="live-layout">
-          <div>
-            <p class="kicker">直播</p>
-            <h2 id="live-title">日常游戏体验，蓝色星原</h2>
-            <p class="lead">房间 7142808。现在没有开播。</p>
-            <p class="more">
-              <a href="https://live.bilibili.com/7142808" target="_blank" rel="noreferrer"
-                >打开直播间</a
-              >
-            </p>
-          </div>
-          <figure class="live-cover">
-            <img
-              src="images/live.jpg"
-              width="960"
-              height="540"
-              alt="直播间封面：樱花树下，一个背着弓的人站在溪边"
-            />
-          </figure>
-        </div>
-      </section>
-
-      <section id="about" class="block" aria-labelledby="about-title">
-        <div class="block-head">
-          <p class="kicker">关于</p>
-          <h2 id="about-title">这个页面记的是公开主页上已有的内容。</h2>
-        </div>
-        <div class="about">
-          <p>
-            道-域是 B 站 UP，UID 56143388，等级 6，勋章是「见习偶像」。投稿从 2019 年 12
-            月开始。播放最多的一支是《维纳斯沙滩排球mod4.0安装教程》。
-          </p>
-          <p>
-            有问题按签名里的群号联系：1065929278。GitHub 账号是
-            <a href="https://github.com/LDAOYU" target="_blank" rel="noreferrer me">LDAOYU</a>。
-          </p>
-        </div>
-      </section>
-    </main>
+      <main>
+        <p id="status" class="status" role="status"></p>
+        <ol id="list" class="list"></ol>
+        <nav id="pager" class="pager" aria-label="分页"></nav>
+      </main>
+    </div>
 
     <footer class="colophon">
-      <p>© <span data-year>2026</span> 道-域</p>
-      <p>资料来自 B 站公开主页</p>
+      <p>第十五轮 · 2026-10-16</p>
+      <p>条目来自公开对照表。下载页属于原作者。</p>
     </footer>
-    <script src="js/site.js"></script>
+
+    <dialog id="detail">
+      <article id="detail-body"></article>
+    </dialog>
+
+    <script src="js/catalog.js"></script>
   </body>
 </html>

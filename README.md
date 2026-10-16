@@ -1,8 +1,8 @@
-# 道-域
+# DOAXVV Steam 模组对照
 
-个人主页，内容来自 B 站公开空间 [道-域](https://space.bilibili.com/56143388)。
+《死或生：沙滩排球维纳斯假期》Steam 版公开模组索引。数据来自 2026-10-16 第十五轮对照表，页面可以按套装、体型、作者和来源检索。
 
-页面上有签名、12 支公开投稿、合集「死或生沙滩排球 mod」、两篇 DLSS 专栏和直播间。安装包和提取码留在 B 站原文里，不写进这个站点。
+服装和 CC 多数含裸化或透视。站点只做对照，下载跳到原页面，不托管文件，也不放预览图。
 
 ## 本地打开
 
@@ -10,14 +10,14 @@
 python3 -m http.server 4173
 ```
 
-浏览器访问 `http://127.0.0.1:4173`。
+浏览器访问 `http://127.0.0.1:4173`。要先确认已满 18 岁。
 
-## 改内容
+## 更新数据
 
-文字在 `index.html`。头像是 `images/avatar.jpg`，直播封面是 `images/live.jpg`。
+把新的对照 Markdown 路径写进 `tools/build_catalog.py` 的 `SOURCE`，然后：
 
-播放和粉丝数会变。改的时候以 B 站空间为准。
+```bash
+python3 tools/build_catalog.py
+```
 
-## 发布
-
-合并到 `main` 之后，在 GitHub 的 Settings → Pages 里选择从 `main` 分支的根目录发布。
+生成的目录在 `data/mods.json`。
